@@ -15,7 +15,7 @@ sudo apt-get update && sudo apt-get install -y --no-install-recommends --no-upgr
     && sudo apt-get clean \
     && sudo rm -rf /var/lib/apt/lists/*
 
-curl -sL https://deb.nodesource.com/setup_9.x | sudo bash -
+curl -sL https://deb.nodesource.com/setup_11.x | sudo bash -
 sudo apt-get install -y --no-install-recommends --no-upgrade \
     nodejs \
     && sudo apt-get clean \
@@ -43,6 +43,6 @@ sudo chattr +i /sfe/git-credentials
 
 git config --global credential.helper "store --file=/sfe/git-credentials"
 
-(git -C /sfe/proxy fetch --all && git -C /sfe/proxy reset --hard origin/mock-api) || (sudo rm -rf /sfe/proxy && mkdir /sfe/proxy && git -C /sfe clone --branch mock-api https://github.com/SymphonyOSF/proxy.git proxy)
+(git -C /sfe/proxy fetch --all && git -C /sfe/proxy reset --hard origin/mana-proxy) || (sudo rm -rf /sfe/proxy && mkdir /sfe/proxy && git -C /sfe clone --branch mana-proxy https://github.com/SymphonyOSF/proxy.git proxy)
 
 /sfe/proxy/os_setup/startup.sh
